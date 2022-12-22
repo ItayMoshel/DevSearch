@@ -34,7 +34,7 @@ def loginUser(request):
 
 def logoutUser(request):
     logout(request)
-    messages.error(request, "User LoggedOut.")
+    messages.info(request, "User LoggedOut.")
     return redirect('login')
 
 
@@ -52,7 +52,7 @@ def registerUser(request):
             login(request, user)
             return redirect('profiles')
         else:
-            messages.error("An error occurred during registration")
+            messages.error(request, "An error occurred during registration")
     
     context = {
         'page': page,
