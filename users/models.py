@@ -52,3 +52,7 @@ class Message(models.Model):
     
     class Meta:
         ordering = ['is_read', '-created']
+        
+class Test(models.Model):
+    name = models.CharField(max_length=200)
+    
